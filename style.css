@@ -1,0 +1,13 @@
+body{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: center;
+    background-color: #989898;
+}
+.card{
+    background-color: #e3e3e3;
+    flex-basis: 30%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
