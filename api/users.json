@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Alice",
+    "email": "test@gmail.com",
+    "phone": "1234567890"
+  },
+  { "id": 2, "name": "Ana", "email": "Ana@gmail.com", "phone": "1234567890" },
+  { "id": 3, "name": "Alex", "email": "Alex@gmail.com", "phone": "245567890" },
+  {
+    "id": 4,
+    "name": "Chris",
+    "email": "Chris@gmail.com",
+    "phone": "80734567890"
+  },
+  { "id": 5, "name": "Alba", "email": "Alba@gmail.com", "phone": "5634567890" },
+  { "id": 6, "name": "Denice", "email": "Denice@test.co", "phone": "242567890" }
+]

@@ -1,0 +1,89 @@
+body {
+    all: unset;
+    width: 100vw;
+}
+
+.container {
+    padding: 0px 20px;
+}
+
+table {
+    width: 100%;
+    border: 2px solid #003f4e;
+    text-align: center;
+    border-radius: 3px;
+    color: #003f4e;
+}
+
+.table-header {
+    width: 100%;
+    background-color: #f7f4f4;
+    font-weight: bold;
+    background-color: rgba(127, 255, 212, 0.219);
+}
+
+tr {
+    justify-content: space-evenly;
+    display: flex;
+    padding: 10px 10px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-around;
+    min-width: 200px;
+    width: 50%;
+    margin: 20px auto;
+}
+
+.add {
+    color: white;
+    background-color: #003f4e;
+    padding: 6px 12px;
+    border-radius: 2px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+    height: 40px;
+}
+
+.add:hover {
+    color: #003f4e;
+    background-color: white;
+    border: 2px solid #003f4e;
+}
+
+.delete {
+    color: white;
+    background-color: #b12c14;
+    padding: 6px 12px;
+    border-radius: 2px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.delete:hover {
+    color: #b12c14;
+    background-color: white;
+    border: 2px solid #b12c14;
+}
+
+.Reset {
+    color: white;
+    background-color: #3759a3;
+    padding: 6px 12px;
+    border-radius: 2px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.Reset:hover {
+    color: #3759a3;
+    background-color: white;
+    border: 2px solid #3759a3;
+}
