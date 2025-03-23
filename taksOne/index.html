@@ -12,16 +12,22 @@
         <thead class="table-header">
           <tr>
             <th>First Name</th>
-            <th>Last Name</th>
-            <th>Age</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody></tbody>
       </table>
       <div class="btn-container">
-        <button class="add">Add Row</button>
-        <button class="delete">Delete Last Row</button>
-        <button class="Reset">Reset Table</button>
+        <div class="add-row">
+          <input name="name" type="text" placeholder="First Name" />
+          <input name="email" type="email" placeholder="Email" />
+          <input name="phone" type="tel" placeholder="Phone" />
+          <button class="add">Add Row</button>
+        </div>
+        <button class="reset">Reset Table</button>
       </div>
     </div>
     <script src="script.js"></script>

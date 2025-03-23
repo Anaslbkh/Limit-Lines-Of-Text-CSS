@@ -28,12 +28,35 @@ tr {
     padding: 10px 10px;
 }
 
+th,
+td {
+    padding: 3px 8px;
+    width: 20%;
+}
+
 .btn-container {
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
     min-width: 200px;
-    width: 50%;
+    width: 100%;
     margin: 20px auto;
+}
+
+.add-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+input {
+    padding: 6px 12px;
+    border-radius: 2px;
+    border: 1px solid #003f4e;
+    font-size: 16px;
+    box-sizing: border-box;
+    height: 40px;
 }
 
 .add {
@@ -71,18 +94,19 @@ tr {
     border: 2px solid #b12c14;
 }
 
-.Reset {
+.reset {
     color: white;
     background-color: #3759a3;
-    padding: 6px 12px;
+    padding: 12px 12px;
     border-radius: 2px;
     border: none;
     font-size: 16px;
     cursor: pointer;
     box-sizing: border-box;
+    width: 200px;
 }
 
-.Reset:hover {
+.reset:hover {
     color: #3759a3;
     background-color: white;
     border: 2px solid #3759a3;
