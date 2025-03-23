@@ -1,4 +1,4 @@
-const table = document.querySelector("table");
+/*const table = document.querySelector("table");
 const tbody = document.querySelector("tbody");
 
 const createElements = () => {
@@ -11,18 +11,18 @@ const createElements = () => {
   editBtn.innerHTML = "<button class='edit'>Edit</button>";
   deleteBtn.innerHTML = "<button class='delete'>Delete</button>";
   return { tr, name, email, phone, editBtn, deleteBtn };
-};
+};*/
 
 const allUsers = [];
-const addBnt = document.querySelector("button.add");
+//const addBnt = document.querySelector("button.add");
 
-const resetBnt = document.querySelector("button.reset");
+//const resetBnt = document.querySelector("button.reset");
 
 const getUsers = async () => {
   const response = await fetch("/api/users.json");
   const users = await response.json();
   allUsers.push(...users);
-
+  /*
   const { tr, name, email, phone, editBtn, deleteBtn } = createElements();
 
   users.forEach((element) => {
@@ -50,9 +50,9 @@ const getUsers = async () => {
         1
       );
     });
-  });
+  });*/
 
-  const editBtns = document.querySelectorAll("button.edit");
+  /*const editBtns = document.querySelectorAll("button.edit");
   editBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const nameInput = document.querySelector('input[name="name"]');
@@ -72,12 +72,24 @@ const getUsers = async () => {
         1
       );
     });
-  });
-};
+  });*/
 
+  const nameStartWithA = await allUsers.filter((user) => {
+    return user.name.startsWith("A");
+  });
+  //console.log(nameStartWithA);
+
+  const namestartWithC = await allUsers.find((user) => {
+    return user.name.startsWith("A");
+  });
+  //console.log(namestartWithC);
+  localStorage.setItem("users", JSON.stringify(allUsers));
+};
+const LocalUsres = localStorage.getItem("users");
+console.log(LocalUsres);
 getUsers();
 
-addBnt.addEventListener("click", (e) => {
+/*addBnt.addEventListener("click", (e) => {
   const nameInput = document.querySelector('input[name="name"]');
   const emailInput = document.querySelector('input[name="email"]');
   const phoneInput = document.querySelector('input[name="phone"]');
@@ -114,3 +126,5 @@ addBnt.addEventListener("click", (e) => {
 resetBnt.addEventListener("click", (e) => {
   tbody.innerHTML = "";
 });
+
+*/
