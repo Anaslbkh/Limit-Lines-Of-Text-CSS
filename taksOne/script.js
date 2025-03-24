@@ -11,18 +11,18 @@ const createElements = () => {
   editBtn.innerHTML = "<button class='edit'>Edit</button>";
   deleteBtn.innerHTML = "<button class='delete'>Delete</button>";
   return { tr, name, email, phone, editBtn, deleteBtn };
-};*/
+};
 
 const allUsers = [];
-//const addBnt = document.querySelector("button.add");
+const addBnt = document.querySelector("button.add");
 
-//const resetBnt = document.querySelector("button.reset");
+const resetBnt = document.querySelector("button.reset");
 
 const getUsers = async () => {
   const response = await fetch("/api/users.json");
   const users = await response.json();
   allUsers.push(...users);
-  /*
+
   const { tr, name, email, phone, editBtn, deleteBtn } = createElements();
 
   users.forEach((element) => {
@@ -50,9 +50,9 @@ const getUsers = async () => {
         1
       );
     });
-  });*/
+  });
 
-  /*const editBtns = document.querySelectorAll("button.edit");
+  const editBtns = document.querySelectorAll("button.edit");
   editBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const nameInput = document.querySelector('input[name="name"]');
@@ -72,7 +72,7 @@ const getUsers = async () => {
         1
       );
     });
-  });*/
+  });
 
   const nameStartWithA = await allUsers.filter((user) => {
     return user.name.startsWith("A");
@@ -88,8 +88,21 @@ const getUsers = async () => {
 const LocalUsres = localStorage.getItem("users");
 console.log(LocalUsres);
 getUsers();
-
-/*addBnt.addEventListener("click", (e) => {
+document
+.querySelector("tbody")
+.addEventListener("DOMContentLoaded", function () {
+  console.log("The tbody table has been loaded.");
+});
+if (document.readyState === "loading") {
+  console.log("The document is loading...");
+  console.log(document.querySelector("tbody"));
+  document
+    .querySelector("tbody")
+    .addEventListener("DOMContentLoaded", function () {
+      console.log("The tbody has been loaded.");
+    });
+}
+addBnt.addEventListener("click", (e) => {
   const nameInput = document.querySelector('input[name="name"]');
   const emailInput = document.querySelector('input[name="email"]');
   const phoneInput = document.querySelector('input[name="phone"]');

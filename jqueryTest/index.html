@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery Product Filter</title>
+    <style>
+      .product {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 5px;
+        @media screen and (min-width: 768px) {
+          border: 5px solid #970404;
+        }
+      }
+      .test-grid {
+        display: grid;
+        width: 100%;
+        height: 500px;
+        border: 4px solid #4d4d4d;
+        grid-template-rows: 100px 5fr 2fr;
+        grid-template-columns: 1fr 1fr 2fr;
+        gap: 10px;
+        div {
+          border: 3px solid #1f9c77;
+          background-color: blue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="filters">
+      <button class="filter-btn" data-category="all">All</button>
+      <button class="filter-btn" data-category="electronics">
+        Electronics
+      </button>
+      <button class="filter-btn" data-category="clothing">Clothing</button>
+      <button class="filter-btn" data-category="books">Books</button>
+    </div>
+    <div id="products">
+      <div class="product" data-category="electronics">Laptop</div>
+      <div class="product" data-category="clothing">T-Shirt</div>
+      <div class="product" data-category="books">JavaScript Book</div>
+      <div class="product" data-category="electronics">Smartphone</div>
+      <div class="product" data-category="clothing">Jeans</div>
+      <div class="product" data-category="books">Python Book</div>
+    </div>
+    <div class="test-grid">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      const list = document.getElementById("myList");
+      const addButton = document.getElementById("addButton");
+
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          console.log("Mutation detected!", mutation);
+          if (mutation.type === "childList") {
+            console.log(mutation);
+          }
+        });
+      });
+
+      observer.observe(list, { childList: true, subtree: true });
+
+      addButton.addEventListener("click", () => {
+        const newItem = document.createElement("li");
+        newItem.textContent = "New item added!";
+        list.appendChild(newItem);
+      });
+    </script>
+  </body>
+</html>
