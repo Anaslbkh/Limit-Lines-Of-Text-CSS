@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MutationObserver Example</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <ul id="myList">
+      <li>Initial item</li>
+    </ul>
+    <button id="addButton" class="btn btn-default">Add Item</button>
+    <button id="removeButton">Remove Item</button>
+
+    <script>
+      const list = document.getElementById("myList");
+      const addButton = document.getElementById("addButton");
+      const removeButton = document.getElementById("removeButton");
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          console.log("Mutation detected!", mutation);
+          if (mutation.type === "childList") {
+            console.log("A child node has been added or removed.");
+          }
+        });
+      });
+
+      observer.observe(list, { childList: true, subtree: true });
+
+      addButton.addEventListener("click", () => {
+        const newItem = document.createElement("li");
+        newItem.textContent = "New item added!";
+        list.appendChild(newItem);
+      });
+      removeButton.addEventListener("click", (e) => {
+        console.log(e.target);
+      });
+    </script>
+  </body>
+</html>
